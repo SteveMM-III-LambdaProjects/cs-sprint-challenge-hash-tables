@@ -3,6 +3,21 @@ def intersection(arrays):
     YOUR CODE HERE
     """
     # Your code here
+    cache  = {}
+    result = []
+
+    # nested fors counting ocurrs
+    for ray in arrays:
+        for itm in ray:
+            if itm not in cache:
+                cache[ itm ]  = 1
+            else:
+                cache[ itm ] += 1
+    
+    # check cache, if in all should == len arrays
+    for key in cache:
+        if cache[ key ] == len( arrays ):
+            result.append( key )
 
     return result
 

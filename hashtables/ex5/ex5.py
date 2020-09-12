@@ -6,9 +6,17 @@ def finder(files, queries):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    
+    dirs    = dict.fromkeys( queries )
+    results = []
+    
+    for path in files:
+        file = path.split( "/" )[ -1 ]
 
-    return result
+        if file in dirs:
+            results.append( path )
+
+    return results
 
 
 if __name__ == "__main__":
